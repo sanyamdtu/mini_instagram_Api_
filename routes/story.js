@@ -10,8 +10,7 @@ var route = require("express").Router(),
 route.get("/", async (req, res) => {
   try {
     var results = await pagination_results(req, res);
-    if (results !== "error") res.status(200).json(results);
-    else res.status(500).json({ error: "server error" });
+    if (results === "error") res.status(500).json({ error: "server error" });
   } catch {
     (err) => {
       res.status(500).json({ error: "server error" });

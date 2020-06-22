@@ -4,6 +4,12 @@ const ObjectId = Schema.ObjectId;
 
 const Stories = new Schema({
   expire_at: { type: Date, default: Date.now, expires: 86400 },
+  Comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comments",
+    },
+  ],
   caption: {
     type: String,
     required: true,

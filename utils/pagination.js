@@ -1,14 +1,15 @@
 var Stories = require("../models/Story"),
-  // Comments = require("../models/Comment");
   pagination_results = async (req, res) => {
     try {
       var limit = 5,
         page = 1;
+      let story = {
+        data: [],
+      };
       if (req.query.limit) limit = parseInt(req.query.limit);
       if (req.query.limit) page = parseInt(req.query.page);
       var sidx = (page - 1) * limit,
-        eidx = page * limit,
-        story = {};
+        eidx = page * limit;
       if (eidx < (await Stories.countDocuments().exec())) {
         story.next = {
           page: page + 1,
@@ -22,13 +23,15 @@ var Stories = require("../models/Story"),
           limit: limit,
         };
       }
-      console.log(sidx);
-      console.log(eidx);
-      var stories = await Stories.find({})
+      await Stories.find({})
         .limit(limit)
-        .skip(sidx);
-      story.data = stories;
-      return story;
+        .skip(sidx)
+        .populate("Comments")
+        .exec((err, results) => {
+          story.data = results;
+          console.log(story);
+          res.status(200).json(story);
+        });
     } catch (error) {
       return "error";
     }

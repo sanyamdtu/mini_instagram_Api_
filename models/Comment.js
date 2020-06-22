@@ -3,10 +3,9 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const Comments_story = new Schema({
-  post_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
-  },
+  // expire_at: { type: Date, default: Date.now, expires: 86400 }
+  //if comment were to be deleted also
+
   author: {
     type: String,
     required: true,
@@ -20,4 +19,4 @@ const Comments_story = new Schema({
     default: Date.now(),
   },
 });
-module.exports = mongoose.model("comments", Comments_story);
+module.exports = mongoose.model("Comments", Comments_story);
