@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var connectdb = () => {
   mongoose
-    .connect("mongodb://localhost:27017/social", {
+    .connect(process.env.Mongo_url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: true,
