@@ -10,7 +10,7 @@ route.post(
     check("text", "please fill the [text] value")
       .not()
       .isEmpty(),
-    check("id", "please fill the [postid] value")
+    check("post_id", "please fill the [post_id] value")
       .not()
       .isEmpty(),
   ],
