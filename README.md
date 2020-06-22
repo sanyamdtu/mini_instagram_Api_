@@ -1,5 +1,5 @@
 # mini_instagram_Api_
-# Foobar
+
 
 This is a simple instagram API which is able to do the following 
 1)   You can create Stories with caption and submitting  1 or at max 2 images with the post request which will expire after 24 hours and it will be stored on the mongo DB atlas and the image will be uploaded to Cloudinary.
