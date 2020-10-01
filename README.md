@@ -22,10 +22,10 @@ Clone this repository and do following :
 
 Create a local .env file and type in your Cloudinary APi and mongoDb URL
 
-API_KEY=  ***********<br>
-API_SECRET= ********<br>
-CLOUD=********<br>
-Mongo_url= *************************************************************<br>
+API_KEY =  ***********<br>
+API_SECRET = ***********<br>
+CLOUD = ***********<br>
+Mongo_url = *************************************************************<br>
 
 Then open the terminal and run the command 
 "node app"
