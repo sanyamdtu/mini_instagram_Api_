@@ -31,4 +31,4 @@ Then open the terminal and run the command
 "node app"
 
 ## Documentation 
-Use this doc file for documentation  :- https://drive.google.com/file/d/1WP419mtq61iRt7PtEPzWdRisI_c7LdaE/view?usp=sharing
+Use the pdf file for documentation given in repository
